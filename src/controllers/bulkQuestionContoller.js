@@ -18,7 +18,7 @@ const addBulkQuestion = async (req, res) =>{
             categoryMap[cat.name] = cat._id;
         });
 
-        console.log(categoryMap)
+        // console.log(categoryMap)
 
         let questions = [];
 
@@ -53,11 +53,9 @@ const addBulkQuestion = async (req, res) =>{
                 res.status(200).json({ status: true, message: "questions added successfully", addedQuestion: `${questions.length}` });
             })
             .on('error', (err) => {
-                console.error('Error processing CSV file:', err);
                 res.status(500).json({ status: false, message: 'Failed to process CSV file', error: err.message });
             });
     } catch (error) {
-        console.error('Error processing CSV file:', error);
         res.status(500).json({ status: false, message: 'Failed to process CSV file', error: error.message });
     }
 }
