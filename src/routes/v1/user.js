@@ -8,12 +8,20 @@ const router = express.Router();
 
 
 router.post('/register', register)
+
+// user login 
 router.post('/login', login)
-router.get('/profile', authentication , getProfile)
+
+// user view profile
+router.get('/profile', authentication, getProfile)
+
+//user update profile
 router.put('/profile', authentication, upload.single('image'),updateProfile)
 
-
+// view category 
 router.get('/categories/all', viewCategory)
+
+// List of questions for each category
 router.get('/question/:categorId', categoryWiseQuestion)
 
 
