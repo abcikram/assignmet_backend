@@ -46,7 +46,7 @@ const addBulkQuestion = async (req, res) =>{
                 // cleanUp :- delete the uploaded file
                 fs.unlink(csvFilePath, (err) => {
                     if (err) {
-                        console.error('Error deleting file:', err);
+                        console.log('Error deleting file:', err);
                     }
                 });
 
