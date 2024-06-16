@@ -3,7 +3,7 @@
 
 ## API Endpoints
 
-### User's Authentication (login , view profile , update profile)
+### User Authentication
 
 - `POST /api/v1/user/login`: User login endpoint.
 
@@ -14,7 +14,7 @@
 - `PUT /api/v1/user/profile`: Update user profile endpoint.
   - User update their profile details, including profile picture using JWT token.
 
-### Category (user view category)
+### Category
 
 - `GET /api/v1/user/categories/all`: Retrieve all categories endpoint.
 
