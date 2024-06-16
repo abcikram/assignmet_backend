@@ -1,30 +1,8 @@
-const { createUser, signUser } = require('../services/auth.service')
+const { signUser } = require('../services/auth.service')
 const UserModel = require('../models/userModel')
 const mongoose = require('mongoose');
 const { generateToken } = require("../services/token.service");
 
-
-const register = async (req, res) => {
-    try {
-
-        const { name, email, picture, password } = req.body;
-
-        const newUser = await createUser({ name, email, picture, password })
-
-        res.status(201).json({
-            status: true,
-            message: "user register successfully",
-            data: newUser
-        });
-
-    } catch (error) {
-        return res.status(500).json({
-            status: false,
-            message: "Server Error!",
-            error: error.message
-        })
-    }
-}
 
 const login = async (req, res) => {
     try {
@@ -155,4 +133,5 @@ const updateProfile = async (req, res, next) => {
 }
 
 
-module.exports = { register , login, getProfile, updateProfile}
+module.exports = {  login, getProfile, updateProfile
+}

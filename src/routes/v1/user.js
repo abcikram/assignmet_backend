@@ -1,13 +1,11 @@
 const express = require('express');
 const { authentication } = require('../../middlewares/auth');
-const { register, login, getProfile, updateProfile } = require('../../controllers/authController');
+const { login, getProfile, updateProfile } = require('../../controllers/authController');
 const upload  = require('../../services/multer.service');
 const { viewCategory, categoryWiseQuestion } = require('../../controllers/userController');
 
 const router = express.Router();
 
-
-router.post('/register', register)
 
 // user login 
 router.post('/login', login)

@@ -24,5 +24,6 @@
 
 
 - `POST /api/v1/questions/bulk`: Bulk import questions endpoint.
-  - Allows bulk creation of questions by importing a CSV file.
+  - Bulk creation of questions by importing a CSV file.
   - Each question is associated with one or more categories specified in the CSV.
+  - router -> v1 -> index.js
